@@ -63,6 +63,8 @@ class User extends Resource
                 ->onlyOnForms()
                 ->creationRules('required', Rules\Password::defaults())
                 ->updateRules('nullable', Rules\Password::defaults()),
+
+            HasMany::make('Children', 'children', User::class),
         ];
     }
 
